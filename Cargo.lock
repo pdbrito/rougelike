@@ -1447,9 +1447,9 @@ checksum = "a3f87b73ce11b1619a3c6332f45341e0047173771e8b8b73f87bfeefb7b56244"
 
 [[package]]
 name = "rltk"
-version = "0.8.1"
+version = "0.8.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1c83076f8174384edf79d3f4a91934b8c0e1feed6eed943608d54af790f0a7dd"
+checksum = "30587bc9361fc5600650d17ad6b9a91bb6a290f9d06a434dc48198d22ead7543"
 dependencies = [
  "bracket-lib",
 ]
