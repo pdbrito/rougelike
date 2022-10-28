@@ -1,7 +1,9 @@
+use monsert_ai_system::MonsterAI;
 use rltk::{GameState, Rltk, RGB};
 use specs::prelude::*;
 
 mod components;
+mod monsert_ai_system;
 pub use components::*;
 mod map;
 pub use map::*;
@@ -19,6 +21,8 @@ impl State {
     fn run_systems(&mut self) {
         let mut vis = VisibilitySystem {};
         vis.run_now(&self.ecs);
+        let mut mob = MonsterAI {};
+        mob.run_now(&self.ecs);
         self.ecs.maintain();
     }
 }
@@ -55,6 +59,7 @@ fn main() -> rltk::BError {
     gs.ecs.register::<Renderable>();
     gs.ecs.register::<Player>();
     gs.ecs.register::<Viewshed>();
+    gs.ecs.register::<Monster>();
 
     let map = Map::new_map_rooms_and_corridors();
     let (player_x, player_y) = map.rooms[0].center();
@@ -83,6 +88,7 @@ fn main() -> rltk::BError {
                 range: 8,
                 dirty: true,
             })
+            .with(Monster {})
             .build();
     }
 
