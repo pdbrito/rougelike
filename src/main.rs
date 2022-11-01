@@ -1,5 +1,5 @@
 use monster_ai_system::MonsterAI;
-use rltk::{GameState, Rltk, RltkBuilder, RGB};
+use rltk::{GameState, Point, Rltk, RltkBuilder, RGB};
 use specs::prelude::*;
 
 mod components;
@@ -76,6 +76,7 @@ fn main() -> rltk::BError {
 
     let map = Map::new_map_rooms_and_corridors();
     let (player_x, player_y) = map.rooms[0].center();
+    gs.ecs.insert(Point::new(player_x, player_y));
 
     let mut rng = rltk::RandomNumberGenerator::new();
     for room in map.rooms.iter().skip(1) {
