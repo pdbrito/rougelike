@@ -1,6 +1,4 @@
-use crate::{RunState, Viewshed};
-
-use super::{Map, Player, Position, State, TileType};
+use super::{Map, Player, Position, RunState, State, TileType, Viewshed};
 use rltk::{Rltk, VirtualKeyCode};
 use specs::prelude::*;
 use std::cmp::{max, min};

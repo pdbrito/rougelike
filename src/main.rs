@@ -1,9 +1,9 @@
-use monsert_ai_system::MonsterAI;
+use monster_ai_system::MonsterAI;
 use rltk::{GameState, Rltk, RltkBuilder, RGB};
 use specs::prelude::*;
 
 mod components;
-mod monsert_ai_system;
+mod monster_ai_system;
 pub use components::*;
 mod map;
 pub use map::*;
